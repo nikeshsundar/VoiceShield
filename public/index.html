@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VoiceShield - AI Voice Deepfake Detector</title>
+    <meta name="description" content="Detect AI-generated voice deepfakes in real-time. Upload any voice note and get an instant deepfake probability score." />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="background-pattern"></div>
+    <main class="container">
+      <header class="hero">
+        <div class="logo-icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" stroke="currentColor" stroke-width="3"/>
+            <path d="M24 12v24M12 24h24" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="24" cy="24" r="8" fill="currentColor"/>
+          </svg>
+        </div>
+        <p class="eyebrow">Open-Source Deepfake Defense</p>
+        <h1>VoiceShield</h1>
+        <p class="tagline">Upload any voice note and detect AI-generated deepfakes in seconds.</p>
+      </header>
+
+      <section class="upload-section">
+        <div class="dropzone" id="dropzone">
+          <div class="dropzone-content">
+            <div class="upload-icon">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8v32M20 28l12 12 12-12" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 40v8a8 8 0 008 8h32a8 8 0 008-8v-8" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="drop-text">Drop audio file or click to upload</p>
+            <p class="drop-subtext">MP3, WAV, M4A, OGG, FLAC • Max 50MB</p>
+          </div>
+          <input type="file" id="audioInput" accept="audio/*" hidden />
+        </div>
+
+        <p class="upload-note">Real analyzer enabled. Upload a PCM16 `.wav` file for real results.</p>
+        <div id="debugPanel" style="margin-top:10px;padding:10px;background:#fff3cd;color:#856404;border-radius:8px;font-size:12px;display:none;"></div>
+      </section>
+
+      <section class="visualizer" id="visualizer" style="display:none;">
+        <canvas id="waveform"></canvas>
+        <p class="visualizer-status" id="visualizerStatus">Analyzing audio...</p>
+      </section>
+
+      <section class="result" id="result" style="display:none;">
+        <div class="score-card">
+          <div class="score-ring" id="scoreRing">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="#e5e7eb" stroke-width="8"/>
+              <circle cx="60" cy="60" r="54" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="339.292" stroke-dashoffset="339.292" id="scoreArc"/>
+            </svg>
+            <div class="score-value">
+              <span id="scoreValue">0</span>
+              <span class="score-label">%</span>
+            </div>
+          </div>
+          <div class="verdict">
+            <p class="verdict-label">Verdict</p>
+            <h2 id="verdictText">Analyzing...</h2>
+          </div>
+        </div>
+
+        <div class="findings-section">
+          <h3>Detection Findings</h3>
+          <ul id="findingsList"></ul>
+        </div>
+
+        <div class="recommendations-section">
+          <h3>Recommendations</h3>
+          <ul id="recommendationsList"></ul>
+        </div>
+
+        <div class="actions-row">
+          <button id="shareBtn" type="button" class="share-btn">
+            <span>📤</span> Share Result
+          </button>
+          <button id="reportBtn" type="button" class="report-btn">
+            <span>🚨</span> Report Scam
+          </button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>🔒 Your audio is processed locally and never stored.</p>
+        <p>Open source • Community powered • Free forever</p>
+      </footer>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

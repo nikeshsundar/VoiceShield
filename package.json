@@ -1,0 +1,20 @@
+{
+  "name": "voiceshield",
+  "version": "1.0.0",
+  "description": "Real-time AI voice deepfake detector",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "deepfake",
+    "voice-clone",
+    "scam-detector",
+    "audio-analysis",
+    "ai-detection"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "multer": "^1.4.5-lts.1"
+  }
+}
