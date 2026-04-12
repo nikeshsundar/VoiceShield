@@ -91,7 +91,18 @@ const server = http.createServer((req, res) => {
       let result;
       try {
         if (ext === ".wav") {
-          result = analyzeVoiceFile(file.path);
+          try {
+            result = analyzeVoiceFile(file.path);
+          } catch (wavErr) {
+            result = {
+              score: 25,
+              verdict: "Analysis had issues",
+              findings: [{ reason: wavErr.message || "WAV parsing failed", weight: 0 }],
+              naturalSignals: [],
+              recommendations: ["Try a different WAV file or convert to PCM16"],
+              metadata: { analyzedAt: new Date().toISOString(), format: ext }
+            };
+          }
         } else {
           result = {
             score: Math.floor(Math.random() * 30) + 10,
