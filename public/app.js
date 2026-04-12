@@ -124,13 +124,6 @@ function showVisualizer() {
 }
 
 async function analyzeAudio(file) {
-  const ext = (file.name.split(".").pop() || "").toLowerCase();
-  if (ext !== "wav") {
-    visualizer.style.display = "block";
-    visualizerStatus.textContent = "Please upload a PCM16 .wav file for real analysis.";
-    return;
-  }
-
   showVisualizer();
 
   const formData = new FormData();
