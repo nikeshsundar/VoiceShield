@@ -1,160 +1,248 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=50&color=00D4FF&center=true&vCenter=true&height=80&width=500&lines=VoiceShield" alt="VoiceShield">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=45&duration=4000&color=00D4FF&center=true&vCenter=true&lines=commitgpt+%E2%9A%A1" alt="commitgpt">
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0.0-00D4FF?style=for-the-badge&logo=version&logoColor=white">
-  <img src="https://img.shields.io/badge/License-MIT-FF6B6B?style=for-the-badge&logo=license&logoColor=white">
-  <img src="https://img.shields.io/badge/Node.js-18+-00D4FF?style=for-the-badge&logo=node.js&logoColor=white">
-  <img src="https://img.shields.io/badge/Open%20Source-%F0%9F%92%9A-green?style=for-the-badge&logo=opensource&logoColor=white">
+  <strong>AI-powered commit messages, standups, and PR descriptions</strong><br>
+  <em>Generated from your git diff in 2 seconds</em>
 </p>
 
----
-
 <div align="center">
 
-![VoiceShield Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2D2D2D,26,00D4FF&height=300&section=header&text=AI+Voice+Deepfake+Detector&fontSize=60&animation=fadeIn&align=center)
+![PyPI](https://img.shields.io/badge/PyPI-1.0.0-00D4FF?style=flat-square&logo=pypi)
+![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=flat-square&logo=python)
+![License](https://img.shields.io/badge/License-MIT-FF6B6B?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Active-00D4FF?style=flat-square)
 
 </div>
 
 ---
 
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Microphone.png" width="30"/> What is VoiceShield?
-</h2>
+## 🚀 The Problem
 
-**VoiceShield** is an open-source real-time AI voice deepfake detector that analyzes audio files to determine if they contain AI-generated or cloned voice content. Protect yourself and your loved ones from voice scam attacks.
+Every day developers waste time writing:
 
-> 🔒 **Privacy-First**: Your audio is processed locally and never stored
+- ❌ `git commit -m "fix"` — lazy, meaningless messages
+- ❌ Standup updates — "what did I do yesterday??"
+- ❌ PR descriptions — explaining changes all over again
 
----
-
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Lightning.png" width="30"/> Features
-</h2>
-
-| Feature | Description |
-|---------|-------------|
-| 🎯 **Real-time Analysis** | Instant deepfake probability scoring |
-| 🔊 **Waveform Visualization** | Beautiful audio waveform display |
-| 🧠 **Heuristic Detection** | Advanced signal processing algorithms |
-| 📊 **Risk Scoring** | 0-100% AI probability score |
-| 💡 **Smart Recommendations** | Actionable security suggestions |
-| 🔗 **One-click Sharing** | Share results instantly |
-| 🚨 **Scam Reporting** | Built-in scam report system |
+**commitgpt fixes all 3 with one command** ✅
 
 ---
 
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Rocket.png" width="30"/> Quick Start
-</h2>
+## 💻 Demo
 
 ```bash
-# Clone the repository
-git clone https://github.com/nikeshsundar/VoiceShield.git
+$ git add .
+$ cmt
 
-# Navigate to project directory
-cd VoiceShield
+✨ feat(auth): add Google OAuth2 login with session timeout
 
-# Install dependencies
-npm install
-
-# Start the server
-npm start
-```
-
-Then open **http://localhost:3002** in your browser
-
----
-
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Gear.png" width="30"/> How It Works
-</h2>
-
-```
-┌─────────────┐     ┌──────────────┐     ┌─────────────────┐     ┌─────────────┐
-│  Upload     │────▶│   WAV        │────▶│   Heuristic     │────▶│   Risk      │
-│  Audio      │     │   Parser      │     │   Analysis      │     │   Score     │
-└─────────────┘     └──────────────┘     └─────────────────┘     └─────────────┘
-```
-
-### Detection Algorithm
-
-1. **WAV Parsing** - Extract PCM16 audio data
-2. **Signal Analysis** - RMS variance, zero-crossing rate
-3. **Prosody Detection** - Pause structure, loudness dynamics
-4. **Risk Calculation** - Combine signals for final score
-
----
-
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Bar%20Chart.png" width="30"/> API Endpoint
-</h2>
-
-```http
-POST /api/analyze
-Content-Type: multipart/form-data
-
-Body: audio file (.wav format)
-```
-
-**Response:**
-```json
-{
-  "score": 78,
-  "verdict": "Likely AI Generated",
-  "findings": [
-    {"reason": "Low loudness variation", "weight": 20},
-    {"reason": "Almost no pauses detected", "weight": 12}
-  ],
-  "recommendations": [
-    "Call the person back on a known number",
-    "Ask a private memory question"
-  ]
-}
+- Implemented OAuth2 flow using Google provider
+- Sessions expire after 30 mins of inactivity
+- Fixed bug where users stayed logged in after password change
+- Added redirect to dashboard on successful login
 ```
 
 ---
 
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Desktop%20Computer.png" width="30"/> Tech Stack
-</h2>
+## 📥 Install
+
+```bash
+pip install commitgpt-nikesh
+```
+
+---
+
+## 🔐 Setup
+
+Choose **ONE** option:
+
+### Option 1: GitHub Token (FREE)
+
+✓ No credit card
+✓ 150 requests/day
+
+1. Go to [github.com](https://github.com) → Settings
+2. Developer Settings → Personal Access Tokens → Tokens (classic)
+3. Generate new token
+4. Copy token (starts with `ghp_`)
+
+Create `.env`:
+```
+GITHUB_TOKEN=ghp_your_token_here
+```
+
+---
+
+### Option 2: Gemini (FREE - Best)
+
+✓ No credit card
+✓ 1,500 requests/day
+
+1. Go to [aistudio.google.com](https://aistudio.google.com)
+2. Get API Key → Create API key
+3. Copy key (starts with `AIza`)
+
+Create `.env`:
+```
+GEMINI_API_KEY=AIza_your_key_here
+```
+
+---
+
+### Option 3: OpenAI (Paid)
+
+✓ Best quality
+✓ ~$0.001 per request
+
+1. Go to [platform.openai.com](https://platform.openai.com)
+2. API Keys → Create secret key
+3. Copy key (starts with `sk-proj-`)
+
+Create `.env`:
+```
+OPENAI_API_KEY=sk-proj-your_key_here
+```
+
+---
+
+### Option 4: Anthropic Claude (Paid)
+
+✓ Great quality
+✓ ~$0.001 per request
+
+1. Go to [console.anthropic.com](https://console.anthropic.com)
+2. API Keys → Create Key
+3. Copy key (starts with `sk-ant-`)
+
+Create `.env`:
+```
+ANTHROPIC_API_KEY=sk-ant-your_key_here
+```
+
+---
+
+## 🔒 Make Token Permanent
+
+**Mac/Linux:**
+```bash
+echo 'export GITHUB_TOKEN=ghp_yourtoken' >> ~/.zshrc
+source ~/.zshrc
+```
+
+**Windows:**
+```bash
+setx GITHUB_TOKEN "ghp_yourtoken"
+```
+
+---
+
+## 📖 Usage
+
+### Commit Message
+```bash
+git add .
+cmt
+```
+
+### Standup Report
+```bash
+cmt standup
+```
+
+Output:
+```
+Yesterday: Implemented OAuth2 login flow, fixed session expiry bug
+Today: Writing tests for auth middleware, reviewing PR #42
+Blockers: None
+```
+
+### PR Description
+```bash
+cmt pr
+```
+
+Output:
+```
+## What changed
+Added Google OAuth2 login with automatic session timeout after 30 minutes.
+
+## Why
+Users were kept logged in indefinitely, creating a security risk.
+
+## Testing
+- Manual: tested login, logout, session expiry
+- Unit: auth middleware coverage at 94%
+- Edge: concurrent login sessions handled correctly
+```
+
+### Extra Flags
+
+```bash
+cmt --emoji    # Add emoji to message
+cmt --copy     # Auto-copy to clipboard
+```
+
+---
+
+## 🧠 How API Selection Works
+
+Just add your key to `.env` and it auto-detects:
+
+```
+1. GITHUB_TOKEN       → GitHub Models (gpt-4o-mini)
+2. GEMINI_API_KEY     → Gemini 2.0 Flash
+3. OPENAI_API_KEY     → OpenAI gpt-4o-mini
+4. ANTHROPIC_API_KEY  → Claude Haiku
+```
+
+**First key found gets used**
+
+---
+
+## ✅ Requirements
+
+- Python 3.8+
+- Git installed
+- Any API key from above
+
+---
+
+## 🐛 Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| `cmt: command not found` | `pip install commitgpt` |
+| `No API key found` | Add key to `.env` file |
+| `Not a git repository` | Run `git init` first |
+| `No staged changes` | Run `git add .` first |
+| `pip install fails` | Check: `python --version` |
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repo
+2. Create branch: `git checkout -b feat/your-feature`
+3. Make changes
+4. Use commitgpt for your message 😄
+5. Push and open PR
+
+---
+
+## 📄 License
+
+MIT — Free to use, modify, and distribute
+
+---
 
 <div align="center">
 
-![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat&logo=javascript&logoColor=black)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
-![Multer](https://img.shields.io/badge/Multer-FF6B6B?style=flat&logo=npm&logoColor=white)
+[![Star](https://img.shields.io/github/stars/nikeshsundar/commitgpt?style=social)](https://github.com/nikeshsundar/commitgpt)
+[![Fork](https://img.shields.io/github/forks/nikeshsundar/commitgpt?style=social)](https://github.com/nikeshsundar/commitgpt)
+[![Watch](https://img.shields.io/github/watchers/nikeshsundar/commitgpt?style=social)](https://github.com/nikeshsundar/commitgpt)
 
-</div>
-
----
-
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Warning.png" width="30"/> Disclaimer
-</h2>
-
-> ⚠️ VoiceShield is an assistive tool and may produce false positives/negatives. Always verify through alternative channels when in doubt. This tool uses heuristic analysis and is not a substitute for professional security advice.
-
----
-
-<h2>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/Red%20Heart.png" width="30"/> Contributing
-</h2>
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
-
-<div align="center">
-
-![Star Badge](https://img.shields.io/github/stars/nikeshsundar/VoiceShield?style=social)
-![Fork Badge](https://img.shields.io/github/forks/nikeshsundar/VoiceShield?style=social)
-![Watch Badge](https://img.shields.io/github/watchers/nikeshsundar/VoiceShield?style=social)
-
-**Made with ❤️ by [Nikesh Sundar](https://github.com/nikeshsundar)**
-
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2D2D2D,26,00D4FF&height=100&section=footer)
+<p>Made with ❤️ by <a href="https://github.com/nikeshsundar">Nikesh Sundar</a></p>
 
 </div>
